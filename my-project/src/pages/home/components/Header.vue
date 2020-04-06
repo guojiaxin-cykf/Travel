@@ -51,5 +51,5 @@
       text-align: center
       .arrow-icon
         margin-left: -.06rem
-        font-size: .4rem
+        font-size: .42rem
 </style>
