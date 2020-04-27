@@ -22,7 +22,7 @@
       HomeSwiper:HomeSwiper,
       HomeIcons:HomeIcons,
       HomeRecommend:HomeRecommend,
-      HomeWeekend:HomeWeekend
+      HomeWeekend:HomeWeekend,
     },
     data:function(){
       return{
