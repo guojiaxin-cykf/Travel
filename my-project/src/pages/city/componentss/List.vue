@@ -4,7 +4,7 @@
       <div class="area">
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
-          <div class="button-wrapper" v>
+          <div class="button-wrapper">
             <div class="button">{{this.city}}</div>
           </div>
         </div>
@@ -23,8 +23,10 @@
       </div>
       <div class="area"
            v-for="(item, key) of cities"
+           :key="key"
+           :ref="key"
       >
-        <div class="title border-topbottom" :key="key">
+        <div class="title border-topbottom">
           {{key}}
         </div>
         <div class="item-list">
@@ -48,10 +50,19 @@
     props:{
       hot:Array,
       cities:Object,
-      city:String
+      city:String,
+      letter:String
     },
     mounted() {
       this.scroll = new BScroll(this.$refs.wrapper)
+    },
+    watch:{
+      letter(){
+        if(this.letter){
+          const element = this.$refs[this.letter][0]
+          this.scroll.scrollToElement(element)
+        }
+      }
     }
   }
 

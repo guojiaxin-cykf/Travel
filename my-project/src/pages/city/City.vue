@@ -5,8 +5,12 @@
     <city-list :cities="cities"
                :hot="hotCities"
                :city="city"
+               :letter="letter"
     ></city-list>
-    <city-alphabet :cities="cities"></city-alphabet>
+    <city-alphabet
+      :cities="cities"
+      @change="handleLetterChange"
+    ></city-alphabet>
   </div>
 </template>
 
@@ -28,7 +32,8 @@
       return{
         cities: {},
         hotCities: [],
-        city:''
+        city:'',
+        letter:''
       }
     },
     methods:{
@@ -42,7 +47,11 @@
           const data = res.data
           this.cities = data.cities
           this.hotCities = data.hotCities
+          this.city = data.city
         }
+      },
+      handleLetterChange(letter){
+        this.letter = letter
       }
     },
     mounted() {
