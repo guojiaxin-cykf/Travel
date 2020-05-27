@@ -17,10 +17,12 @@
 </template>
 
 <script>
+  import {mapState,mapGetters} from 'vuex'
   export default {
     name:'HomeHeader',
-    props:{
-      city:String
+    computed:{
+      ...mapState(['city']),
+      ...mapGetters(['doubleCity'])
     }
   }
 </script>
@@ -51,7 +53,8 @@
       border-radius: .1rem
     .header-right
       margin-top: .2rem
-      width: 1.24rem
+      padding 0 .1rem
+      min-width: 1.04rem
       float: right
       text-align: center
       color white

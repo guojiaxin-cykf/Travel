@@ -4,7 +4,6 @@
     <city-search :cities="cities"></city-search>
     <city-list :cities="cities"
                :hot="hotCities"
-               :city="city"
                :letter="letter"
     ></city-list>
     <city-alphabet
@@ -32,7 +31,6 @@
       return{
         cities: {},
         hotCities: [],
-        city:'',
         letter:''
       }
     },
